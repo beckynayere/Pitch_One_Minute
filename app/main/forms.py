@@ -1,25 +1,17 @@
 from flask_wtf import FlaskForm
-from wtforms import ValidationError, StringField,PasswordField,SubmitField,BooleanField
-from wtforms.validators import Required,Email,EqualTo
-from ..models import User
+from wtforms import StringField, SelectField, TextAreaField, SubmitField
+from wtforms.validators import Required
 
-class LoginForm(FlaskForm):
-    username = StringField('Username',validators=[Required()])
-    password = PasswordField('Password',validators=[Required()])
-    remember = BooleanField('Remember Me!')
-    submit = SubmitField('Login')
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Write a brief bio about you.',validators = [Required()])
+    submit = SubmitField('Save')
 
-class RegForm(FlaskForm):
-    email = StringField('Your Email Address', validators=[Required(),Email()])
-    username = StringField('Enter Your Username', validators=[Required()])
-    password = PasswordField('Password',validators = [Required(), EqualTo('password_confirm',message = 'Passwords must match')])
-    password_confirm = PasswordField('Confirm Passwords',validators = [Required()])
-    submit = SubmitField('Sign Up')
+class PitchForm(FlaskForm):
+    title = StringField('Title', validators=[Required()])
+    category = SelectField('Category', choices=[('Events','Events'),('Job','Job'),('Advertisement','Advertisement')],validators=[Required()])
+    post = TextAreaField('Your Pitch', validators=[Required()])
+    submit = SubmitField('Pitch')
 
-    def validate_email(self,data_field):
-        if User.query.filter_by(email = data_field.data).first():
-            raise ValidationError("The Email has already been taken!")
-    
-    def validate_username(self, data_field):
-        if User.query.filter_by(username = data_field.data).first():
-            raise ValidationError("The username has already been taken")
+class CommentForm(FlaskForm):
+    comment = TextAreaField('Leave a comment',validators=[Required()])
+    submit = SubmitField('Comment')
