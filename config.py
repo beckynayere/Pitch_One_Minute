@@ -6,7 +6,7 @@ class Config:
     SECRET_KEY = 'yes'
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Bryon:nayere@localhost/pitch_minute'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    UPLOADED_PHOTOS_DEST = 'app/static/photos'
+    UPLOADED_PHOTOS_DEST = 'app/static/images'
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
 
@@ -37,7 +37,7 @@ class DevConfig(Config):
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Bryon:nayere@localhost/pizza_shop_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Bryon:nayere@localhost/pitch_minute_test'
 
 
 

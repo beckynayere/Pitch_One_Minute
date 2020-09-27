@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra+Display&family=Supermercado+One&display=swap');
+
 .body{
     background-attachment: fixed;
     background-position: center;
@@ -20,7 +22,7 @@
     font-weight: bolder;
     margin-top: 2%;
     font-size: 40px;
-    font-family: 'Farro', sans-serif;
+    font-family: ''Supermercado One', cursive';
 }
 .pict{
     margin-top: 2%;

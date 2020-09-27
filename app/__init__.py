@@ -1,7 +1,7 @@
 from flask import Flask 
 from config import config_options
 from flask_mail import Mail
-from flask_login import LoginManager
+from flask_login import LoginManager,login_required
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_uploads import IMAGES, UploadSet,configure_uploads
@@ -15,10 +15,12 @@ login_manager.login_view = 'auth.login'
 photos = UploadSet('photos',IMAGES)
 
 
-
+# configu
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config_options[config_name])
+
+    # registering blueprint
     from .auth import auth as authentication_blueprint
     from .main import main as main_blueprint
 
