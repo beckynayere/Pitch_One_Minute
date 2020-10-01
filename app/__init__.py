@@ -6,6 +6,7 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_uploads import IMAGES, UploadSet,configure_uploads
 
+# instantiating flask extensions
 db = SQLAlchemy()
 mail = Mail()
 bootstap = Bootstrap()
@@ -15,7 +16,7 @@ login_manager.login_view = 'auth.login'
 photos = UploadSet('photos',IMAGES)
 
 
-# configu
+# configure
 def create_app(config_name):
     app = Flask(__name__)
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
