@@ -19,6 +19,8 @@ photos = UploadSet('photos',IMAGES)
 # configure
 def create_app(config_name):
     app = Flask(__name__)
+    # app = create_app()
+    # app.app_context().push()
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config.from_object(config_options[config_name])
 

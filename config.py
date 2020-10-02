@@ -4,7 +4,7 @@ class Config:
 
 
     SECRET_KEY = 'yes'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Bryon:nayere@localhost/pitch_minute'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Bryon:nayere@localhost/pitch_minute'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST = 'app/static/images'
     SIMPLEMDE_JS_IIFE = True
